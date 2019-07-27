@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace CompoundInterest
+namespace Compound_Interest_Calculator
 {
     /// <summary>
     /// Interaction logic for App.xaml
