@@ -10,7 +10,8 @@
     Height="650"
     Background="AliceBlue"
     mc:Ignorable="d">
-    <StackPanel>
+    <ScrollViewer>
+        <StackPanel>
         <!--  The Nav Bar's Grid  -->
         <Grid>
             <Grid.ColumnDefinitions>
@@ -189,5 +190,6 @@
                 FontSize="18px"
                 Visibility="Collapsed" />
         </StackPanel>
-    </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </Window>

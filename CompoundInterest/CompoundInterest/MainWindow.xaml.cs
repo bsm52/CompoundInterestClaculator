@@ -88,7 +88,10 @@ namespace Compound_Interest_Calculator
                 {
                     CalcMod.CalcPeriod = i;
 
-                    double balance = compound.GetEndingBalance(CalcMod);
+                    double balance;
+
+                    balance = compound.GetEndingBalance(CalcMod);
+
 
                     TotalInterest = balance - CalcMod.InitialAmount;
 
