@@ -97,7 +97,7 @@ namespace Compound_Interest_Calculator
                     else
                     {
                         balance = compound.GetEndingBalanceWithMonthly(CalcMod);
-                        TotalInterest = balance - (CalcMod.InitialAmount + (double)CalcMod?.MonthlyDeposit * 12);
+                        TotalInterest = balance - (CalcMod.InitialAmount + (double)CalcMod?.MonthlyDeposit * 12 * i);
                     }
                         
 
