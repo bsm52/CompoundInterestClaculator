@@ -32,7 +32,7 @@ namespace Compound_Interest_Calculator
 
         private void Author_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/channel/UCWyi2-D5Nf-fME6m-Y7O-Cg");
+            System.Diagnostics.Process.Start("https://github.com/bsm52");
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -49,7 +49,12 @@ namespace Compound_Interest_Calculator
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
+           
             Compounding compound = new Compounding();
+
+            //clear every time new submission is made
+            YearlyAmounts = new List<CompoundingDisplayModel>();
+            YearlyAmountsDataGrid.ItemsSource = null;
 
             bool IsValid = ValidateValues();
 
@@ -73,16 +78,10 @@ namespace Compound_Interest_Calculator
                 double YearInterst = 0;
 
                 double PrevYearBalance;
-                //if there is no monthly deposit, make equal to inital amount
-                if (CalcMod.MonthlyDeposit == null)
-                {
-                    PrevYearBalance = CalcMod.InitialAmount;
-                }
-                else
-                {
-                    PrevYearBalance = CalcMod.InitialAmount + (double)CalcMod.MonthlyDeposit * 12;
-                }
+               
+                PrevYearBalance = CalcMod.InitialAmount;
                 
+               
 
                 for (int i = 1; i <= years; i++)
                 {
@@ -90,10 +89,20 @@ namespace Compound_Interest_Calculator
 
                     double balance;
 
-                    balance = compound.GetEndingBalance(CalcMod);
+                    if (CalcMod.MonthlyDeposit == null)
+                    {
+                        balance = compound.GetEndingBalance(CalcMod);
+                        TotalInterest = balance - CalcMod.InitialAmount;
+                    }
+                    else
+                    {
+                        balance = compound.GetEndingBalanceWithMonthly(CalcMod);
+                        TotalInterest = balance - (CalcMod.InitialAmount + (double)CalcMod?.MonthlyDeposit * 12);
+                    }
+                        
 
 
-                    TotalInterest = balance - CalcMod.InitialAmount;
+                   
 
                     YearInterst = PrevYearBalance * CalcMod.InterestRate/100;
 
@@ -112,6 +121,8 @@ namespace Compound_Interest_Calculator
                 YearlyAmountsDataGrid.Visibility = Visibility.Visible;
 
                 YearlyAmountsDataGrid.ItemsSource = YearlyAmounts;
+
+                
 
 
             }  

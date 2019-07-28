@@ -29,5 +29,23 @@ namespace Compound_Interest_Calculator
 
             return balance;
         }
+
+
+        public double GetEndingBalanceWithMonthly(CalculatorModel calc)
+        {
+            double P = calc.InitialAmount;
+            
+            double r = calc.InterestRate / 100;
+            double n = calc.CompoundingTimes;
+            double t = calc.CalcPeriod;
+            double PMT = (double)calc.MonthlyDeposit;
+            double depTimes = 12 / n;
+
+            double balance = P * Math.Pow((1 + (r / n)), n * t) + (PMT * depTimes * ((Math.Pow(1 + r/n, n * t) - 1)/ (r / n) ));
+
+            balance = Math.Round(balance, 2);
+
+            return balance;
+        }
     }
 }

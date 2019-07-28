@@ -188,7 +188,8 @@
                 HorizontalAlignment="Center"
                 FontFamily="Arial"
                 FontSize="18px"
-                Visibility="Collapsed" />
+                Visibility="Collapsed"
+                />
         </StackPanel>
         </StackPanel>
     </ScrollViewer>
