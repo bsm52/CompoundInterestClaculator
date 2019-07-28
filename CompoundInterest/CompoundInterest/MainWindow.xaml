@@ -32,13 +32,24 @@
                 FontFamily="Arial"
                 FontSize="15"
                 FontWeight="Bold" />
-            <Label
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Content="More Info"
+                    HorizontalAlignment="Right"
+                    FontWeight="Bold"
+                    FontFamily="Arial"
+                    VerticalAlignment="Center"
+                    FontSize="15"/>
+            
+                <Label
                 x:Name="author"
                 Grid.Row="0"
                 Grid.Column="3"
                 HorizontalAlignment="Right"
                 Content="By Brandon Meier"
-                MouseLeftButtonDown="Author_MouseLeftButtonDown" />
+                MouseLeftButtonDown="Author_MouseLeftButtonDown"
+                    FontWeight="Bold"/>
         </Grid>
         <Border
             MaxWidth="700px"
@@ -86,7 +97,7 @@
                     FontSize="18px"
                     PreviewTextInput="NumberValidationTextBox"
                     TextAlignment="Center"
-                    TextInput="InitialAmountTextBox_TextInput" />
+                   />
                 <TextBlock
                     Grid.Row="2"
                     Grid.Column="1"
@@ -106,7 +117,7 @@
                     FontSize="18px"
                     PreviewTextInput="NumberValidationTextBox"
                     TextAlignment="Center"
-                    TextInput="InitialAmountTextBox_TextInput" />
+                    />
                 <TextBlock
                     Grid.Row="4"
                     Grid.Column="0"
@@ -127,7 +138,7 @@
                     FontSize="18px"
                     PreviewTextInput="NumberValidationTextBox"
                     TextAlignment="Center"
-                    TextInput="InitialAmountTextBox_TextInput" />
+                    />
                 <TextBlock
                     Grid.Row="6"
                     Grid.Column="0"
@@ -148,7 +159,7 @@
                     FontSize="18px"
                     PreviewTextInput="NumberValidationTextBox"
                     TextAlignment="Center"
-                    TextInput="InitialAmountTextBox_TextInput" />
+                    />
                 <TextBlock
                     Grid.Row="8"
                     Grid.Column="0"
@@ -169,7 +180,7 @@
                     FontSize="18px"
                     PreviewTextInput="NumberValidationTextBox"
                     TextAlignment="Center"
-                    TextInput="InitialAmountTextBox_TextInput" />
+                    />
                 <Button
                     x:Name="SubmitButton"
                     Grid.Row="10"

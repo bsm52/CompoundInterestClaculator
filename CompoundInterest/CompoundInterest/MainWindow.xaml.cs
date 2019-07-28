@@ -30,26 +30,23 @@ namespace Compound_Interest_Calculator
             InitializeComponent();
         }
 
+        //Lead's people to my GitHub Account
         private void Author_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/bsm52");
         }
 
+        //Only allows Numeric values to be entered into the fields
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("$[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        //add a dollar sign to the amount
-        private void InitialAmountTextBox_TextInput(object sender, TextCompositionEventArgs e)
-        {
-            InitialAmountTextBox.Text = "$" + InitialAmountTextBox.Text;
-        }
-
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
            
+            //allows for the compounding functions
             Compounding compound = new Compounding();
 
             //clear every time new submission is made
@@ -58,6 +55,7 @@ namespace Compound_Interest_Calculator
 
             bool IsValid = ValidateValues();
 
+            //If all of the fields have been entered. If not, nothing will happen
             if (IsValid == true)
             {
                 CalculatorModel CalcMod = new CalculatorModel();
@@ -129,6 +127,10 @@ namespace Compound_Interest_Calculator
             
         }
 
+        /// <summary>
+        /// Validates all of the fields of the calculator
+        /// </summary>
+        /// <returns></returns>
         private bool ValidateValues()
         {
             if(InitialAmountTextBox.Text == "")
