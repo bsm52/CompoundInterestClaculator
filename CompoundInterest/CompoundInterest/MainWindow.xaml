@@ -31,7 +31,8 @@
                 Content="Compound Interest Calculator"
                 FontFamily="Arial"
                 FontSize="15"
-                FontWeight="Bold" />
+                FontWeight="Bold" 
+                Cursor="Hand"/>
                 <Label 
                     Grid.Row="0"
                     Grid.Column="1"
@@ -40,7 +41,8 @@
                     FontWeight="Bold"
                     FontFamily="Arial"
                     VerticalAlignment="Center"
-                    FontSize="15" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
+                    FontSize="15" MouseLeftButtonDown="Label_MouseLeftButtonDown"
+                    Cursor="Hand"/>
             
                 <Label
                 x:Name="author"
@@ -49,7 +51,8 @@
                 HorizontalAlignment="Right"
                 Content="By Brandon Meier"
                 MouseLeftButtonDown="Author_MouseLeftButtonDown"
-                    FontWeight="Bold"/>
+                    FontWeight="Bold"
+                    Cursor="Hand"/>
         </Grid>
         <Border
             MaxWidth="700px"
