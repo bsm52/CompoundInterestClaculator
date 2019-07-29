@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CompoundInterest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -155,5 +156,12 @@ namespace Compound_Interest_Calculator
             }
             return true;
         }
+
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Info InfoWindow = new Info();
+            InfoWindow.ShowDialog();
+        }
     }
 }
+ 

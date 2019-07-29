@@ -40,7 +40,7 @@
                     FontWeight="Bold"
                     FontFamily="Arial"
                     VerticalAlignment="Center"
-                    FontSize="15"/>
+                    FontSize="15" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
             
                 <Label
                 x:Name="author"

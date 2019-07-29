@@ -1,0 +1,32 @@
+﻿<Window x:Class="CompoundInterest.Info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CompoundInterest"
+        mc:Ignorable="d"
+        Title="Info" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label
+            HorizontalAlignment="Center" Grid.Row="0" Content="Compound Interest Calculator" FontFamily="Arial"
+            FontSize="25" VerticalAlignment="Center"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <TextBlock FontFamily="Arial" FontSize="16" Margin="5">
+                    This application helps determine the compounded amount of money.
+            </TextBlock>
+            <TextBlock FontFamily="Arial" FontSize="16" Margin="5">
+                The Formula to calculate the final amount goes as follows: V = P(1+r/n)(nt) <LineBreak></LineBreak>
+                Where V = the future value of the investment <LineBreak />
+P = the principal investment amount<LineBreak />
+r = the annual interest rate <LineBreak />
+n = the number of times that interest is compounded per year<LineBreak />
+t = the number of years the money is invested for<LineBreak />
+            </TextBlock>
+            <Image Height="274"  Source="20160630-compound-interest-diagram.jpg" Stretch="Fill" Margin="426,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
